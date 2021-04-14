@@ -27,7 +27,7 @@ SECRET_KEY = config('KEY', default='')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['carzonedjango.herokuapp.com']
+ALLOWED_HOSTS = ['carzonedjango.herokuapp.com','www.carzone.hzaratecode.com','carzone.hzaratecode.com']
 LOGIN_REDIRECT_URL = 'dashboard'
 
 # Application definition
