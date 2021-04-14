@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+from decouple import config
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -20,13 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'uwc75nlat2zg7d!9u*l%*h7l*jh0d5njpb$nz=rklr3lkp4i(s'
+SECRET_KEY = config('KEY', default='')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_REDIRECT_URL = 'dashboard'
 
 # Application definition
 
@@ -41,10 +42,20 @@ INSTALLED_APPS = [
     #My apps
     'pages.apps.PagesConfig',
     'cars.apps.CarsConfig',
+    'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
 
     #Third apps
     'ckeditor',
     'django.contrib.humanize',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # Providers
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +146,19 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
+
+SITE_ID = 1
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = config('EMAIL_HOST', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD', default='')
+EMAIL_USE_TLS = True
+
+GOOGLE_RECAPTCHA_SECRET_KEY = config('EMAIL_PASSWORD', default='')

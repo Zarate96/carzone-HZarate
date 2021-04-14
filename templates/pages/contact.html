@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 
+{% block title %} | Contacto {% endblock %}
 {% block content %}
 {% load static %}
 <!-- Sub banner start -->
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
         <div class="breadcrumb-areas">
-            <h1>Contact Us</h1>
+            <h1>Contáctanos</h1>
             <ul class="breadcrumbs">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li class="active">Contact Us</li>
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li class="active">Contáctanos</li>
             </ul>
         </div>
     </div>
@@ -21,16 +22,19 @@
     <div class="container">
         <!-- Main title -->
         <div class="main-title text-center">
-            <h1>Contact <span>Us</span></h1>
+            <h1>Contáctanos <span>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
         </div>
+        
         <form action="#" method="POST" enctype="multipart/form-data">
+            {% include 'includes/messages.html' %}
+            {% csrf_token %}
             <div class="row">
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="col-md-6 text-left">
                             <div class="form-group name">
-                                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                                <input type="text" name="name" class="form-control" placeholder="Nombre" required>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -40,22 +44,24 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group subject">
-                                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                                <input type="text" name="subject" class="form-control" placeholder="Motivo" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group number">
-                                <input type="text" name="phone" class="form-control" placeholder="Phone Number">
+                                <input type="text" name="phone" class="form-control" placeholder="Número celular">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group message">
-                                <textarea class="form-control" name="message" placeholder="Write message"></textarea>
+                                <textarea class="form-control" name="message" placeholder="Escribir mensaje"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <script src="https://www.google.com/recaptcha/api.js"></script>
+                        <div class="g-recaptcha ml-3" data-sitekey="6LcE1KgaAAAAALeCsdRH6WQ2LswNgY2wjpW-emV6"></div>
+                        <div class="col-md-12 mt-3">
                             <div class="send-btn text-center">
-                                <button type="submit" class="btn btn-md button-theme">Send Message</button>
+                                <button type="submit" class="btn btn-md button-theme">Enviar Mensaje</button>
                             </div>
                         </div>
                     </div>
@@ -67,8 +73,8 @@
                                 <i class="flaticon-phone"></i>
                             </div>
                             <div class="detail">
-                                <h5>Phone:</h5>
-                                <p><a href="#">0477 8556 552</a></p>
+                                <h5>Teléfono:</h5>
+                                <p><a href="#">222222222</a></p>
                             </div>
                         </div>
                         <div class="ci-box">
@@ -77,7 +83,7 @@
                             </div>
                             <div class="detail">
                                 <h5>Email:</h5>
-                                <p><a href="#">info@themevessel.com</a></p>
+                                <p><a href="#">contacto@hzaratecode.com</a></p>
                             </div>
                         </div>
                         <div class="ci-box">
@@ -86,7 +92,7 @@
                             </div>
                             <div class="detail">
                                 <h5>Web:</h5>
-                                <p><a href="#">info@themevessel.com</a></p>
+                                <p><a href="https://hzaratecode.com/">hzaratecode.com/</a></p>
                             </div>
                         </div>
                         <div class="ci-box mb-0">

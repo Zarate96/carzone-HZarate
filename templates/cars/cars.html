@@ -10,7 +10,7 @@
         <div class="breadcrumb-areas">
             <h1>Our Car Inventory</h1>
             <ul class="breadcrumbs">
-                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'home' %}">Inicio</a></li>
                 <li class="active">Cars</li>
             </ul>
         </div>
@@ -31,7 +31,7 @@
                         <div class="car-box-3">
                             <div class="car-thumbnail">
                                 <a href="{% url 'car_detail' car.id %}" class="car-img">
-                                    <div class="tag">For Rent</div>
+                                    <div class="tag">En venta</div>
                                     <div class="price-box">
                                         <span>$ {{car.price | intcomma }}</span>
                                     </div>
@@ -134,15 +134,15 @@
                 <div class="sidebar-right">
                     <!-- Advanced search start -->
                     <div class="widget advanced-search2">
-                        <h3 class="sidebar-title">Search your desire car</h3>
+                        <h3 class="sidebar-title">Búsqueda avanzada</h3>
                         <form action="{% url 'search' %}" method="">
                             <div class="form-group">
-                                <input type="text" name="keyword" placeholder="Search by name" class="form-control">
+                                <input type="text" name="keyword" placeholder="Buscar por nombre" class="form-control">
                             </div>
             
                             <div class="form-group">
                                 <select class="form-control search-fields" name="model">
-                                    <option selected="true" disabled="disabled">Model</option>
+                                    <option selected="true" disabled="disabled">Modelo</option>
                                     {% for model in model_search %}
                                       <option value="{{model}}">{{model}}</option>
                                     {% endfor %}
@@ -150,7 +150,7 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control search-fields" name="city">
-                                    <option selected="true" disabled="disabled">Location</option>
+                                    <option selected="true" disabled="disabled">Ubicación</option>
                                     {% for city in city_search %}
                                       <option value="{{city}}">{{city}}</option>
                                     {% endfor %}
@@ -158,7 +158,7 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control search-fields" name="year">
-                                    <option selected="true" disabled="disabled">Year</option>
+                                    <option selected="true" disabled="disabled">Año</option>
                                     {% for year in year_search %}
                                       <option value="{{year}}">{{year}}</option>
                                     {% endfor %}
@@ -166,20 +166,20 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control search-fields" name="body_style">
-                                    <option selected="true" disabled="disabled">Select Type Of Car</option>
+                                    <option selected="true" disabled="disabled">Selecciona el tipo de auto</option>
                                     {% for body_style in body_style_search %}
                                       <option value="{{body_style}}">{{body_style}}</option>
                                     {% endfor %}
                                 </select>
                             </div>
                             <div class="range-slider clearfix">
-                                            <label>Price</label>
+                                            <label>Precio</label>
                                             <div data-min="0" data-max="150000"  data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
                                             <div class="clearfix"></div>
                                         </div>
                             <div class="form-group">
                                 <button class="btn btn-block button-theme btn-md">
-                                    <i class="fa fa-search"></i> Search
+                                    <i class="fa fa-search"></i> Buscar
                                 </button>
                             </div>
                         </form>
@@ -187,14 +187,14 @@
 
                     <!-- Question start -->
                     <div class="widget question widget-3">
-                        <h5 class="sidebar-title">Follow us</h5>
+                        <h5 class="sidebar-title">Síguenos</h5>
                         <div class="social-list clearfix">
                             <ul>
-                                <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#" class="rss-bg"><i class="fa fa-rss"></i></a></li>
-                                <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="{% url 'home' %}" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{% url 'home' %}" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="{% url 'home' %}" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="{% url 'home' %}" class="rss-bg"><i class="fa fa-rss"></i></a></li>
+                                <li><a href="{% url 'home' %}" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
                     </div>
