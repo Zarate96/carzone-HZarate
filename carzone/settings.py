@@ -165,7 +165,7 @@ EMAIL_HOST_USER = config('EMAIL_HOST', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD', default='')
 EMAIL_USE_TLS = True
 
-GOOGLE_RECAPTCHA_SECRET_KEY = config('EMAIL_PASSWORD', default='')
+GOOGLE_RECAPTCHA_SECRET_KEY = config('RECAPTCHA_KEY', default='')
 
 #whitenoise settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
