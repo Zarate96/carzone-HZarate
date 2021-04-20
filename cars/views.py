@@ -23,7 +23,7 @@ def cars(request):
     if 'model' in request.GET:
         model = request.GET['model']
         if model:
-            cars = cars.filter(model__iexact=model)
+            cars = cars.filter(model__icontains=model)
 
     if 'city' in request.GET:
         city = request.GET['city']
