@@ -90,18 +90,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'carzone.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'carzone_db',
-#        'USER': 'postgres',
-#        'PASSWORD': '1120287',
-#        'HOST': 'localhost',
-#    }
-#}
 
 DATABASES = {'default': dj_database_url.config(default='postgres://postgres:1120287@localhost/carzone_db')}
 
